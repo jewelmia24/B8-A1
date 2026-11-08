@@ -25,7 +25,7 @@ const processInput = (value:TInputType):TReturnType =>{
 
 
 
-type TCoord = [number, number, string]
+type TCoord = readonly[latitude:number, longitude:number, locationName:string]
 
 const formatCoordinate = (coord: TCoord): string => {
     const [latitude, longitude, locationName] = coord;
@@ -33,4 +33,24 @@ const formatCoordinate = (coord: TCoord): string => {
     return `Location: ${locationName} (${latitude}, ${longitude})`;
   
 }
+
+
+
+
+
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  const result: T[] = [];
+  for (const arr of arrays) {
+   
+    result.push(...arr);
+    
+  }
+  return result;
+}
+
+
+
+
+
 
