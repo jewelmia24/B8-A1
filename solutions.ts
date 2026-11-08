@@ -1,0 +1,36 @@
+const multiplyValue = (value : number, multiplier : number = 2) : number  =>{
+  return value * multiplier;
+}
+
+
+
+
+type TInputType = string | number | boolean;
+type TReturnType = string | number 
+
+
+
+
+const processInput = (value:TInputType):TReturnType =>{
+
+    if(typeof value === 'string'){
+        return value.trim().toLocaleLowerCase()
+    }else if(typeof value === 'number'){
+        return value * 10;
+    }else{
+        return value? 'Active' : 'Inactive'
+    }
+    
+}
+
+
+
+type TCoord = [number, number, string]
+
+const formatCoordinate = (coord: TCoord): string => {
+    const [latitude, longitude, locationName] = coord;
+
+    return `Location: ${locationName} (${latitude}, ${longitude})`;
+  
+}
+
