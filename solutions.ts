@@ -51,6 +51,20 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 
 
 
+interface ICourse {
+    title: string
+    students: number
+    isPublished: boolean
+}
 
+
+
+const getPopularCourses = (courses: ICourse[], minStudents: number): ICourse[] =>{
+    return courses.filter(course => course.isPublished && course.students >= minStudents)
+ 
+}
+
+
+// Should return courses with at least 50 students and published
 
 
