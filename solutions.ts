@@ -5,11 +5,9 @@ const multiplyValue = (value : number, multiplier : number = 2) : number  =>{
 
 
 
+
 type TInputType = string | number | boolean;
 type TReturnType = string | number 
-
-
-
 
 const processInput = (value:TInputType):TReturnType =>{
 
@@ -22,6 +20,8 @@ const processInput = (value:TInputType):TReturnType =>{
     }
     
 }
+
+
 
 
 
@@ -39,7 +39,7 @@ const formatCoordinate = (coord: TCoord): string => {
 
 
 
-function concatenateArrays<T>(...arrays: T[][]): T[] {
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
   const result: T[] = [];
   for (const arr of arrays) {
    
@@ -51,13 +51,13 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 
 
 
+
+
 interface ICourse {
     title: string
     students: number
     isPublished: boolean
 }
-
-
 
 const getPopularCourses = (courses: ICourse[], minStudents: number): ICourse[] =>{
     return courses.filter(course => course.isPublished && course.students >= minStudents)
@@ -65,6 +65,19 @@ const getPopularCourses = (courses: ICourse[], minStudents: number): ICourse[] =
 }
 
 
-// Should return courses with at least 50 students and published
+
+
+
+
+
+
+const pluckValues = <T, K extends keyof T>(items:T[], key:K):T[K][] => {
+
+    return items.map(item=> item[key])
+
+}
+
+
+
 
 
