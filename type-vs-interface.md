@@ -36,7 +36,7 @@ type UserWithRole = User & {
 type Coordinates = [number, number];
 ```
 
-দুটিই Generic support করে। তবে `interface` সরাসরি Union type এবং Tuple প্রকাশ করতে পারে না এবং `type` alias-কে Declaration Merging-এর মাধ্যমে extend করা যায় না।
+দুটিই Generic support করে। তবে সরাসরি Union type এবং Tuple `interface` ব্যবহার করা যায় না এবং `type` alias-কে Declaration Merging-এর মাধ্যমে extend করা যায় না।
 
 ## কখন কোনটি ব্যবহার করবেন?
 
